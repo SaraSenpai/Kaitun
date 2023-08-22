@@ -1,15 +1,6 @@
---[[
 
-█████╗  ██╗      ██████╗██╗  ██╗███████╗███╗   ███╗██╗   ██╗    ██╗  ██╗██╗   ██╗██████╗ 
-██╔══██╗██║     ██╔════╝██║  ██║██╔════╝████╗ ████║╚██╗ ██╔╝    ██║  ██║██║   ██║██╔══██╗
-███████║██║     ██║     ███████║█████╗  ██╔████╔██║ ╚████╔╝     ███████║██║   ██║██████╔╝
-██╔══██║██║     ██║     ██╔══██║██╔══╝  ██║╚██╔╝██║  ╚██╔╝      ██╔══██║██║   ██║██╔══██╗
-██║  ██║███████╗╚██████╗██║  ██║███████╗██║ ╚═╝ ██║   ██║       ██║  ██║╚██████╔╝██████╔╝
-╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
-Create By Alchemy Hub --------------------------- Kaitan Script Open-Source [ 29/6/2023 ]
-< Alchemy#9999 / Copyright © Alchemy 2023 >
 
-]]--
+
 if game.CoreGui:FindFirstChild("PepsiUi") then
     game.CoreGui:FindFirstChild("PepsiUi"):Destroy()
 end
@@ -29,7 +20,7 @@ local library = {
 		easingDirection = Enum.EasingDirection.Out
 	},
 	colors = {
-		main = Color3.fromRGB(0, 255, 162),
+		main = Color3.fromRGB(0, 255, 255),
 		background = Color3.fromRGB(40, 40, 40),
 		outerBorder = Color3.fromRGB(15, 15, 15),
 		innerBorder = Color3.fromRGB(73, 63, 73),
@@ -272,7 +263,7 @@ do
 					library.Backdrop.Visible = not not library_flags["__Designer.Background.UseBackgroundImage"]
 					library.Backdrop.Image = resolveid(library_flags["__Designer.Background.ImageAssetID"], "__Designer.Background.ImageAssetID") or ""
 					library.Backdrop.ImageColor3 = library_flags["__Designer.Background.ImageColor"] or Color3.new(1, 1, 1)
-					library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 10) / 100
+					library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 95) / 100
 				end
 			end)
 		end
@@ -789,7 +780,7 @@ function library:CreateWindow(options, ...)
 	innerBackdrop.ZIndex = -1
 	innerBackdrop.Visible = not not library_flags["__Designer.Background.UseBackgroundImage"]
 	innerBackdrop.ImageColor3 = library_flags["__Designer.Background.ImageColor"] or Color3.new(1, 1, 1)
-	innerBackdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 10) / 100
+	innerBackdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 95) / 100
 	innerBackdrop.Image = resolveid(library_flags["__Designer.Background.ImageAssetID"], "__Designer.Background.ImageAssetID") or ""
 	library.Backdrop = innerBackdrop
 	tabsHolder.Name = "tabsHolder"
@@ -933,7 +924,7 @@ function library:CreateWindow(options, ...)
 			newTab.TextStrokeTransparency = 0.75
 			newTab.Size = UDim2:new(textToSize(newTab).X + 4, 1)
 		end
-		function goto()
+		local function goto()
 			if not library.colorpicker and not submenuOpen and windowFunctions.selected.button ~= newTab then
 				pcall(function()
 					for _, e in next, library.elements do
@@ -5828,7 +5819,7 @@ function library:CreateWindow(options, ...)
 		if library.Backdrop then
 			library.Backdrop.Image = resolveid(library_flags["__Designer.Background.ImageAssetID"], "__Designer.Background.ImageAssetID") or ""
 			library.Backdrop.Visible = not not library_flags["__Designer.Background.UseBackgroundImage"]
-			library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 10) / 100
+			library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 95) / 100
 			library.Backdrop.ImageColor3 = library_flags["__Designer.Background.ImageColor"] or Color3.new(1, 1, 1)
 		end
 		local function setbackground(t, Asset, Transparency, Visible)
@@ -5904,7 +5895,7 @@ function library:CreateWindow(options, ...)
 					library.Backdrop.Visible = not not library_flags["__Designer.Background.UseBackgroundImage"]
 					library.Backdrop.Image = resolveid(library_flags["__Designer.Background.ImageAssetID"], "__Designer.Background.ImageAssetID") or ""
 					library.Backdrop.ImageColor3 = library_flags["__Designer.Background.ImageColor"] or Color3.new(1, 1, 1)
-					library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 10) / 100
+					library.Backdrop.ImageTransparency = (library_flags["__Designer.Background.ImageTransparency"] or 95) / 100
 				end
 			end)
 		end
@@ -5960,9 +5951,11 @@ library.AddWindow = library.CreateWindow
 library.Window = library.CreateWindow
 library.W = library.CreateWindow
 local Wait = library.subs.Wait
-local PepsiUi = library:CreateWindow({Name = "Alchemy Hub - Kaitan Version",Theme = {Image = "rbxassetid://7483871523",Info = "Info",Background = {Asset = "rbxassetid://13575821723"}}})local KaiTun = PepsiUi:CreateTab({Name = "Genaral"})local KaiTun2 = KaiTun:CreateSection({Name = "Main",Side = "Left"})KaiTun2:AddToggle({Name="Start",Value=false,Callback=function(value)getgenv().LevelFarm=value;StopBodyClip(getgenv().LevelFarm);end})local KaiTun2 = KaiTun:CreateSection({Name = "Stars Farm",Side = "Left"})local KaiTun2 = KaiTun:CreateSection({Name = "Main",Side = "Left"})local KaiTun3 = KaiTun:CreateSection({Name = "Main",Side = "Right"})local KaiTun6 = KaiTun:CreateSection({Name = "Sword",Side = "Right"})local KaiTun5 = KaiTun:CreateSection({Name = "Melee",Side = "Left"})QuestAR = KaiTun:CreateSection({Name = "Quest",Side = "Left"})Gun = KaiTun:CreateSection({Name = "Gun",Side = "Rght"})LevelFarmFarm=KaiTun2:AddLabel({Name = "AutoFarm : ❌"})StastConFig=KaiTun2:AddLabel({Name = "UesConFig : ✅"})KaiTun2:AddLabel({Name = "Super Fast : ✅"})KaiTun2:AddLabel({Name = "Bypass : ✅"})WolrdSet3=KaiTun2:AddLabel({Name = "World : 1 ❌"})WolrdSet=KaiTun2:AddLabel({Name = "World : 2 ❌"})WolrdSet1=KaiTun2:AddLabel({Name = "World : 3 ❌"})StastMelee=KaiTun2:AddLabel({Name = ""})StastDefense=KaiTun2:AddLabel({Name = ""})StastSword=KaiTun2:AddLabel({Name = ""})StastGun=KaiTun2:AddLabel({Name = ""})StastDevilFruit=KaiTun2:AddLabel({Name = ""})PointsStast=KaiTun2:AddLabel({Name = ""})PlayerName=KaiTun3:AddLabel({Name = ""})Health=KaiTun3:AddLabel({Name = ""})Energy=KaiTun3:AddLabel({Name = ""})BountyHonorStast=KaiTun3:AddLabel({Name = ""})LevelStast=KaiTun3:AddLabel({Name = ""})EXP=KaiTun3:AddLabel({Name = ""})FragmentsStast=KaiTun3:AddLabel({Name = ""})BeliStast=KaiTun3:AddLabel({Name = ""})DevilFruitStast=KaiTun3:AddLabel({Name = ""})RaceStast=KaiTun3:AddLabel({Name = ""})Superhuman = KaiTun5:AddLabel({Name = "❌ : Superhuman"})DeathStep = KaiTun5:AddLabel({Name = "❌ : Death Step"})SharkmanKarate = KaiTun5:AddLabel({Name = "❌ : Sharkman Karate"})ElectricClaw = KaiTun5:AddLabel({Name = "❌ : Electric Claw"})DragonTalon = KaiTun5:AddLabel({Name = "❌ : Dragon Talon"})GodHuman = KaiTun5:AddLabel({Name = "❌ : God Human"})Shisui = KaiTun6:AddLabel({Name = "❌ : Shisui"})Saddi = KaiTun6:AddLabel({Name = "❌ : Saddi"})Wando = KaiTun6:AddLabel({Name = "❌ : Wando"})TrueTripleKatana = KaiTun6:AddLabel({Name = "❌ : True Triple Katana"})Saber = KaiTun6:AddLabel({Name = "❌ : Saber"})Rengoku = KaiTun6:AddLabel({Name = "❌ : Rengoku"})MidnightBlade = KaiTun6:AddLabel({Name = "❌ : Midnight Blade"})DragonTrident = KaiTun6:AddLabel({Name = "❌ : DragonTrident"})Yama = KaiTun6:AddLabel({Name = "❌ : Yama"})BuddySword = KaiTun6:AddLabel({Name = "❌ : Buddy Sword"})Canvander = KaiTun6:AddLabel({Name = "❌ : Canvander"})TwinHooks = KaiTun6:AddLabel({Name = "❌ : Twin Hooks"})SpikeyTrident = KaiTun6:AddLabel({Name = "❌ : Spikey Trident"})HallowScythe = KaiTun6:AddLabel({Name = "❌ : Hallow Scythe"})DarkDagger = KaiTun6:AddLabel({Name = "❌ : Dark Dagger"})Tushita = KaiTun6:AddLabel({Name = "❌ : Tushita"})Kabucha = Gun:AddLabel({Name = "❌ : Kabucha"})AcidumRifle = Gun:AddLabel({Name = "❌ : Acidum Rifle"})BizarreRifle = Gun:AddLabel({Name = "❌ : Bizarre Rifle"})BartiloQuest = QuestAR:AddLabel({Name = "❌ : Bartilo Quest"})DonSwanQuest = QuestAR:AddLabel({Name = "❌ : Don Swan Quest"})KillDonSwan = QuestAR:AddLabel({Name = "❌ : Kill Don Swan"})
+local PepsiUi = library:CreateWindow({Name = "Lua Hub",Theme = {Image = "rbxassetid://7483871523",Info = "Info",Background = {Asset = "rbxassetid://5553946656"}}})local KaiTun = PepsiUi:CreateTab({Name = "Genaral"})local KaiTun2 = KaiTun:CreateSection({Name = "Main",Side = "Left"})KaiTun2:AddToggle({Name="Start",Value=false,Callback=function(value)getgenv().LevelFarm=value;StopBodyClip(getgenv().LevelFarm);end})local KaiTun2 = KaiTun:CreateSection({Name = "Stars Farm",Side = "Left"})local KaiTun2 = KaiTun:CreateSection({Name = "Main",Side = "Left"})local KaiTun3 = KaiTun:CreateSection({Name = "Main",Side = "Right"})local KaiTun6 = KaiTun:CreateSection({Name = "Sword",Side = "Right"})local KaiTun5 = KaiTun:CreateSection({Name = "Melee",Side = "Left"})QuestAR = KaiTun:CreateSection({Name = "Quest",Side = "Left"})Gun = KaiTun:CreateSection({Name = "Gun",Side = "Rght"})LevelFarmFarm=KaiTun2:AddLabel({Name = "AutoFarm : ❌"})StastConFig=KaiTun2:AddLabel({Name = "UesConFig : ✅"})KaiTun2:AddLabel({Name = "Super Fast : ✅"})KaiTun2:AddLabel({Name = "Bypass : ✅"})WolrdSet3=KaiTun2:AddLabel({Name = "Wolrd : 1 ❌"})WolrdSet=KaiTun2:AddLabel({Name = "Wolrd : 2 ❌"})WolrdSet1=KaiTun2:AddLabel({Name = "Wolrd : 3 ❌"})StastMelee=KaiTun2:AddLabel({Name = ""})StastDefense=KaiTun2:AddLabel({Name = ""})StastSword=KaiTun2:AddLabel({Name = ""})StastGun=KaiTun2:AddLabel({Name = ""})StastDevilFruit=KaiTun2:AddLabel({Name = ""})PointsStast=KaiTun2:AddLabel({Name = ""})PlayerName=KaiTun3:AddLabel({Name = ""})Health=KaiTun3:AddLabel({Name = ""})Energy=KaiTun3:AddLabel({Name = ""})BountyHonorStast=KaiTun3:AddLabel({Name = ""})LevelStast=KaiTun3:AddLabel({Name = ""})EXP=KaiTun3:AddLabel({Name = ""})FragmentsStast=KaiTun3:AddLabel({Name = ""})BeliStast=KaiTun3:AddLabel({Name = ""})DevilFruitStast=KaiTun3:AddLabel({Name = ""})RaceStast=KaiTun3:AddLabel({Name = ""})Superhuman = KaiTun5:AddLabel({Name = "❌ : Superhuman"})DeathStep = KaiTun5:AddLabel({Name = "❌ : Death Step"})SharkmanKarate = KaiTun5:AddLabel({Name = "❌ : Sharkman Karate"})ElectricClaw = KaiTun5:AddLabel({Name = "❌ : Electric Claw"})DragonTalon = KaiTun5:AddLabel({Name = "❌ : Dragon Talon"})GodHuman = KaiTun5:AddLabel({Name = "❌ : God Human"})Shisui = KaiTun6:AddLabel({Name = "❌ : Shisui"})Saddi = KaiTun6:AddLabel({Name = "❌ : Saddi"})Wando = KaiTun6:AddLabel({Name = "❌ : Wando"})TrueTripleKatana = KaiTun6:AddLabel({Name = "❌ : True Triple Katana"})Saber = KaiTun6:AddLabel({Name = "❌ : Saber"})Rengoku = KaiTun6:AddLabel({Name = "❌ : Rengoku"})MidnightBlade = KaiTun6:AddLabel({Name = "❌ : Midnight Blade"})DragonTrident = KaiTun6:AddLabel({Name = "❌ : DragonTrident"})Yama = KaiTun6:AddLabel({Name = "❌ : Yama"})BuddySword = KaiTun6:AddLabel({Name = "❌ : Buddy Sword"})Canvander = KaiTun6:AddLabel({Name = "❌ : Canvander"})TwinHooks = KaiTun6:AddLabel({Name = "❌ : Twin Hooks"})SpikeyTrident = KaiTun6:AddLabel({Name = "❌ : Spikey Trident"})HallowScythe = KaiTun6:AddLabel({Name = "❌ : Hallow Scythe"})DarkDagger = KaiTun6:AddLabel({Name = "❌ : Dark Dagger"})Tushita = KaiTun6:AddLabel({Name = "❌ : Tushita"})Kabucha = Gun:AddLabel({Name = "❌ : Kabucha"})AcidumRifle = Gun:AddLabel({Name = "❌ : Acidum Rifle"})BizarreRifle = Gun:AddLabel({Name = "❌ : Bizarre Rifle"})BartiloQuest = QuestAR:AddLabel({Name = "❌ : Bartilo Quest"})DonSwanQuest = QuestAR:AddLabel({Name = "❌ : Don Swan Quest"})KillDonSwan = QuestAR:AddLabel({Name = "❌ : Kill Don Swan"})
+------------BodyClip and NoClip
 task.spawn(function()pcall(function()while wait() do if getgenv().LevelFarm == true then if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then local Noclip = Instance.new("BodyVelocity")Noclip.Name = "BodyClip"Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart;Noclip.MaxForce = Vector3.new(100000,100000,100000)Noclip.Velocity = Vector3.new(0,0,0)end;end;end;end)end)
 task.spawn(function()pcall(function() game:GetService("RunService").Stepped:Connect(function() if getgenv().LevelFarm==true then for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do if v:IsA("BasePart") then v.CanCollide = false;end;end;end;end)end)end)
+--------SCript
 game:GetService("UserInputService").WindowFocused:connect(function()game.RunService:Set3dRenderingEnabled(true)end)game:GetService("UserInputService").WindowFocusReleased:connect(function()game.RunService:Set3dRenderingEnabled(false)end)
 task.spawn(function()while true do wait()_G.rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick) if not _G.Rejoin then if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.MessageArea:FindFirstChild("ErrorFrame") then game:GetService("TeleportService"):Teleport(game.PlaceId)wait()end;end;end)end;end)
 task.spawn(function()while wait() do if getgenv().LevelFarm then pcall(function()game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","1")game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2")game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","3")if _G.AutoBuyLegendarySword_Hop and getgenv().LevelFarm and SecondSea then wait(1)Hop()end;end)end;end;end)
@@ -5989,21 +5982,21 @@ task.spawn(function() pcall(function() while wait() do StastDefense:Set("Defense
 task.spawn(function() pcall(function() while wait() do StastSword:Set("Sword : "..game:GetService("Players").localPlayer.Data.Stats.Sword.Level.Value) end end) end)
 task.spawn(function() pcall(function() while wait() do StastGun:Set("Gun : "..game:GetService("Players").localPlayer.Data.Stats.Gun.Level.Value) end end) end)
 task.spawn(function() pcall(function() while wait() do StastDevilFruit:Set("DevilFruit : "..game:GetService("Players").localPlayer.Data.Stats["Demon Fruit"].Level.Value) end end) end)
-task.spawn(function() pcall(function()  while wait() do if game.PlaceId == 2753915549 then WolrdSet3:Set("World : 1 ".."✅") end end end) end)
-task.spawn(function() pcall(function() while wait() do if game.PlaceId == 4442272183 then WolrdSet:Set("World : 2 ".."✅") end end end) end)
-task.spawn(function() pcall(function() while wait() do if game.PlaceId == 7449423635 then WolrdSet1:Set("World : 3 ".."✅") end end end) end)
+task.spawn(function() pcall(function()  while wait() do if game.PlaceId == 2753915549 then WolrdSet3:Set("Wolrd : 1 ".."✅") end end end) end)
+task.spawn(function() pcall(function() while wait() do if game.PlaceId == 4442272183 then WolrdSet:Set("Wolrd : 2 ".."✅") end end end) end)
+task.spawn(function() pcall(function() while wait() do if game.PlaceId == 7449423635 then WolrdSet1:Set("Wolrd : 3 ".."✅") end end end) end)
 task.spawn(function() pcall(function() while wait() do Health:Set("Health : "..game.Players.LocalPlayer.Character.Humanoid.Health) end end) end)
 task.spawn(function() pcall(function() while wait() do  Energy:Set("Stamina : "..game.Players.LocalPlayer.Character.Energy.Value) end end) end)
 task.spawn(function() pcall(function() while wait() do EXP:Set("EXP : "..game:GetService("Players").localPlayer.Data.Exp.Value) end  end) end)
 task.spawn(function() pcall(function()  while wait() do if getgenv().LevelFarm==false then LevelFarmFarm:Set("AutoFarm : ❌") elseif getgenv().LevelFarm==true then LevelFarmFarm:Set("AutoFarm : ✅") end end end) end)
 task.spawn(function() while task.wait() do pcall(function() for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do if v.Name == "Saber" then Saber:Set("✅ : Saber") end if v.Name == "Rengoku" then Rengoku:Set("✅ : Rengoku") end if v.Name == "Midnight Blade" then MidnightBlade:Set("✅ : Midnight Blade") end if v.Name == "Dragon Trident" then  DragonTrident:Set("✅ : Dragon Trident") end if v.Name == "Yama" then Yama:Set("✅ : Yama") end if v.Name == "Buddy Sword" then BuddySword:Set("✅ : Buddy Sword") end if v.Name == "Canvander" then Canvander:Set("✅ : Canvander") end if v.Name == "Twin Hooks" then TwinHooks:Set("✅ : Twin Hooks") end if v.Name == "Spikey Trident" then SpikeyTrident:Set("✅ : Spikey Trident") end if v.Name == "Hallow Scythe" then  HallowScythe:Set("✅ : Hallow Scythe") end if v.Name == "Dark Dagger" then DarkDagger:Set("✅ : Dark Dagger") end if v.Name == "Tushita" then  Tushita:Set("✅ : Tushita") end end end) end end)
-local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-LibraryNotify:Notification({ Text = "\67\114\101\97\116\101\32\66\121\32\58\32\65\108\99\104\101\109\121\32\72\117\98", Duration = 12 })
+---------------- Gun Check ----------------
 task.spawn(function()while task.wait() do pcall(function() for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do if v.Name == "Kabucha" then Kabucha:Set("✅ : Kabucha") end if v.Name == "Acidum Rifle" then AcidumRifle:Set("✅ : Acidum Rifle") end if v.Name == "Bizarre Rifle" then BizarreRifle:Set("✅ : Bizarre Rifle") end end end) end end)
-local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-LibraryNotify:Notification({ Text = "\74\111\105\110\32\68\105\115\99\111\114\100\32\58\32\104\116\116\112\115\58\47\47\100\105\115\99\111\114\100\46\103\103\47\100\85\100\122\90\115\107\66\67\67", Duration = 12 })
+---------------- Quest Check ----------------
 task.spawn(function()while task.wait() do if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then  BartiloQuest:Set("✅ : Bartilo Quest") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then else DonSwanQuest:Set("✅ : Don Swan Quest") end if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then KillDonSwan:Set("✅ : Kill Don Swan") end end end)
+---------------- Legendary Sword Check ----------------
 task.spawn(function()while task.wait() do pcall(function() for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do if v.Name == "Shisui" then Shisui:Set("✅ : Shisui") end if v.Name == "Saddi" then Saddi:Set("✅ : Saddi") end if v.Name == "Wando" then Wando:Set("✅ : Wando") end if v.Name == "True Triple Katana" then TrueTripleKatana:Set("✅ : True Triple Katana") end end end) end end)
+---------------- Melee Check ----------------
 task.spawn(function()while task.wait() do if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then Superhuman:Set("✅ : Superhuman") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then DeathStep:Set("✅ : Death Step") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then SharkmanKarate:Set("✅ : Sharkman Karate") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then ElectricClaw:Set("✅ : Electric Claw") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then DragonTalon:Set("✅ : Dragon Talon") end if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodHuman",true) == 1 then GodHuman:Set("✅ : God Human") end end end)
 task.spawn(function ()while wait() do if getgenv().LevelFarm then for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  l__EatRemote__245 = v:FindFirstChild("EatRemote", true); if   l__EatRemote__245 then game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", l__EatRemote__245.Parent:GetAttribute("OriginalName"), game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v.Name)) end end end end end)
 task.spawn(function() while task.wait() do if getgenv().FullySuprtHuman then if game.Players.LocalPlayer.Backpack:FindFirstChild("Combat") or game.Players.LocalPlayer.Character:FindFirstChild("Combat") and game:GetService("Players")["LocalPlayer"].Data.Beli.Value >= 150000 then wait(.1) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg") end if game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Backpack:FindFirstChild("Superhuman") then _G.SelectWeaponHere = "Superhuman" end if game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") then if game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value <= 299 then _G.SelectWeaponHere = "Black Leg" end if game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") and game.Players.LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value <= 299 then _G.SelectWeaponHere = "Electro" end if game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") and game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate").Level.Value <= 299 then _G.SelectWeaponHere = "Fishman Karate" end if getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value < 1500 then game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LoadFruit",(FruitList)) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin","Buy") _G.SelectChip = "Flame" _G.Auto_Dungeon=true getgenv().LevelFarm=false _G.AutoBuyChip=true _G.Auto_StartRaid=true _G.AutoSuperhuman=false elseif getgenv().FullySuprtHuman and game.Players.LocalPlayer.Data.Fragments.Value >= 1500 then unequip("Fishman Karate")wait(.1) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1") game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")  else _G.Auto_Dungeon=false getgenv().LevelFarm=true _G.AutoBuyChip=false _G.Auto_StartRaid=false _G.AutoSuperhuman=true if game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value <= 299 then _G.SelectWeaponHere = "Dragon Claw" end wait(0.1) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman") end end end end end)
@@ -6017,7 +6010,7 @@ local plr = game.Players.LocalPlayer local CbFw = debug.getupvalues(require(plr.
 function TweenFarm(Pos)Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/350, Enum.EasingStyle.Linear	),{CFrame = Pos}) end)tween:Play()if Distance <= 350 then tween:Cancel()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos end if _G.StopTween == true then tween:Cancel() _G.Clip = false end end
 function GetDistance(target)return math.floor((target.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude)end
 -----------Bypass
-function ByPass(Position)game.Players.LocalPlayer.Character.Head:Destroy()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position wait(.1)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")end
+function ByPass(Position)game.Players.LocalPlayer.Character.Head:Destroy()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position wait(.5)game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Position game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")end
 ------------------AutoFaarm
 task.spawn(function()while wait() do if getgenv().LevelFarm then pcall(function() local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text if not string.find(QuestTitle, NameMon) then StartMagnet = false game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")end if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then StartMagnet = false QuestCheck()repeat wait() TweenFarm(CFrameQuest) until (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1200 or not getgenv().LevelFarm if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then wait(1.2) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)wait(0.5)end elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then QuestCheck() if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then if v.Name == Mon then if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then repeat task.wait()_G.NotAutoEquip = false equip(_G.WeaponMelee)AutoHaki()PosMon = v.HumanoidRootPart.CFrame OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame TweenFarm(v.HumanoidRootPart.CFrame * CFrame.new(0,5,15)) game:GetService'VirtualUser':CaptureController() game:GetService'VirtualUser':Button1Down(Vector2.new(50,50)) v.HumanoidRootPart.CanCollide = false game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy() v.HumanoidRootPart.Size = Vector3.new(50,50,50)v.Humanoid.WalkSpeed = 0 v.Head.CanCollide = false StartMagnet = true until not getgenv().LevelFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false else StartMagnet = false game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest") end end end end else StartMagnet = false if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then TweenFarm(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(0,0,0)) else if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 200 then if CFrameMon ~= nil then TweenFarm(CFrameMon * CFrame.new(0,0,0)) else if OldPos ~= nil then TweenFarm(OldPos.Position)end end else StartMagnet = false TweenFarm(CFrameMon)end end end end end)end end end)
 task.spawn(function()while wait() do if getgenv().LevelFarm then pcall(function()if game:GetService("Players").LocalPlayer.Data.Level.Value >= 700 and OldWolrd then getgenv().LevelFarm = false;if game:GetService("Workspace").Map.Ice.Door.Transparency == 1 then if game:GetService("Workspace").Enemies:FindFirstChild("Ice Admiral [Lv. 700] [Boss]") then for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do if v.Name == "Ice Admiral [Lv. 700] [Boss]" then if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then repeat task.wait()AutoHaki()equip(_G.SelectWeaponHere)v.HumanoidRootPart.CanCollide = false;v.Humanoid.WalkSpeed = 0 v.Head.CanCollide = false;TweenFarm(v.HumanoidRootPart.CFrame * CFrame.new(0,0,35))game:GetService("VirtualUser"):CaptureController()game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")until not getgenv().LevelFarm or not v.Parent or v.Humanoid.Health <= 0 end;end;end;else if game:GetService("ReplicatedStorage"):FindFirstChild("Ice Admiral [Lv. 700] [Boss]") then TweenFarm(game:GetService("ReplicatedStorage"):FindFirstChild("Ice Admiral [Lv. 700] [Boss]").HumanoidRootPart.CFrame * CFrame.new(0,35,0))end;end;else TweenFarm(CFrame.new(4851.732421875, 5.651424884796143, 718.1107788085938))wait(1.1)game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")wait(.5)equip("Key")TweenFarm(CFrame.new(1348.487060546875, 37.34933853149414, -1326.12158203125))end;end;end)end;end;end)
@@ -6046,8 +6039,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 15 or MyLevel <= 29 then
             Mon = "Gorilla [Lv. 20]"
@@ -6058,8 +6049,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1301.87988, 18.6214523, -468.544769, 0.164645091, -1.12205412e-09, 0.986352861, -5.18567367e-09, 1, 2.00318762e-09, -0.986352861, -5.44471934e-09, 0.164645091)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 30 or MyLevel <= 39 then
             Mon = "Pirate [Lv. 35]"
@@ -6070,8 +6059,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 40 or MyLevel <= 59 then
             Mon = "Brute [Lv. 45]"
@@ -6082,8 +6069,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1144.44861, 90.5594559, 4307.25928, -0.998438537, 0, 0.0558618344, 0, 1, 0, -0.0558618344, 0, -0.998438537)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 60 or MyLevel <= 74 then
             Mon = "Desert Bandit [Lv. 60]"
@@ -6094,8 +6079,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(894.488647, 5.14000702, 4392.43359, 0.819155693, -0, -0.573571265, 0, 1, -0, 0.573571265, 0, 0.819155693)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 75 or MyLevel <= 89 then
             Mon = "Desert Officer [Lv. 70]"
@@ -6106,8 +6089,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(1580.03198, 4.61375761, 4366.86426)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 90 or MyLevel <= 99 then
 			RedeemCode()
@@ -6119,8 +6100,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(1389.74451, 88.1519318, -1298.90796, -0.342042685, 0, 0.939684391, 0, 1, 0, -0.939684391, 0, -0.342042685)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 100 or MyLevel <= 119 then
             Mon = "Snowman [Lv. 100]"
@@ -6131,8 +6110,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(1389.74451, 88.1519318, -1298.90796, -0.342042685, 0, 0.939684391, 0, 1, 0, -0.939684391, 0, -0.342042685)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 120 or MyLevel <= 149 then
             Mon = "Chief Petty Officer [Lv. 120]"
@@ -6143,8 +6120,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-4882.8623, 22.6520386, 4255.53516)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 150 or MyLevel <= 174 then
             Mon = "Sky Bandit [Lv. 150]"
@@ -6155,8 +6130,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-4970.74219, 294.544342, -2890.11353)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 175 or MyLevel <= 189 then
             Mon = "Dark Master [Lv. 175]"
@@ -6167,8 +6140,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5220.58594, 430.693298, -2278.17456)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 190 or MyLevel <= 209 then
             Mon = "Prisoner [Lv. 190]"
@@ -6179,8 +6150,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5308.93115, 1.65517521, 475.120514, -0.0894274712, -5.00292918e-09, -0.995993316, 1.60817859e-09, 1, -5.16744869e-09, 0.995993316, -2.06384709e-09, -0.0894274712)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 210 or MyLevel <= 249 then
             Mon = "Dangerous Prisoner [Lv. 210]"
@@ -6191,8 +6160,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5308.93115, 1.65517521, 475.120514, -0.0894274712, -5.00292918e-09, -0.995993316, 1.60817859e-09, 1, -5.16744869e-09, 0.995993316, -2.06384709e-09, -0.0894274712)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 250 or MyLevel <= 299 then
             Mon = "Toga Warrior [Lv. 250]"
@@ -6217,8 +6184,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5363.01123, 41.5056877, 8548.47266)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 325 or MyLevel <= 374 then
             Mon = "Military Spy [Lv. 325]"
@@ -6229,8 +6194,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5926.0625, 57.0983391, 8898.3877, 0.820648372, -1.39857292e-09, -0.571433485, 5.01257647e-10, 1, -1.72761416e-09, 0.571433485, 1.13132836e-09, 0.820648372)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 375 or MyLevel <= 399 then
             Mon = "Fishman Warrior [Lv. 375]"
@@ -6251,8 +6214,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(61909.7539, 108.484055, 1561.8739, -0.276268601, 7.58251204e-08, 0.961080492, 5.23033243e-08, 1, -6.38607887e-08, -0.961080492, 3.26249712e-08, -0.276268601)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 450 or MyLevel <= 474 then
             Mon = "God's Guard [Lv. 450]"
@@ -6263,8 +6224,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-4716.95703, 853.089722, -1933.925427)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 475 or MyLevel <= 524 then
             Mon = "Shanda [Lv. 475]"
@@ -6275,8 +6234,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-7685.12354, 5601.05127, -443.171509)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 525 or MyLevel <= 549 then
             Mon = "Royal Squad [Lv. 525]"
@@ -6287,8 +6244,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-7685.02051, 5606.87842, -1442.729)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 550 or MyLevel <= 624 then
             Mon = "Royal Soldier [Lv. 550]"
@@ -6299,8 +6254,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-7864.44775, 5661.94092, -1708.22351)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 625 or MyLevel <= 649 then
             Mon = "Galley Pirate [Lv. 625]"
@@ -6311,8 +6264,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5595.06982, 41.5013695, 3961.47095)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel >= 650 then
             Mon = "Galley Captain [Lv. 650]"
@@ -6323,8 +6274,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5658.5752, 38.5361786, 4928.93506)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         end
     elseif SecondSea then
@@ -6337,8 +6286,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-737.026123, 39.1748352, 2392.57959)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
         elseif MyLevel == 725 or MyLevel <= 774 then
             Mon = "Mercenary [Lv. 725]"
@@ -6349,8 +6296,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-960.12384, 80.2886276, 1691.82996, 0.920708776, 8.58963034e-09, -0.390250295, -3.26311032e-08, 1, -5.49752599e-08, 0.390250295, 6.33505053e-08, 0.920708776)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 775 or MyLevel <= 799 then
             Mon = "Swan Pirate [Lv. 775]"
@@ -6361,8 +6306,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(970.369446, 142.653198, 1217.3667)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 800 or MyLevel <= 874 then
             Mon = "Factory Staff [Lv. 800]"
@@ -6373,8 +6316,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(506.323364, 72.9597626, 9.77466297, -0.339674324, -7.69937536e-09, -0.940543115, -3.40559581e-08, 1, 4.11311296e-09, 0.940543115, 3.34282184e-08, -0.339674324)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 875 or MyLevel <= 899 then
             Mon = "Marine Lieutenant [Lv. 875]"
@@ -6385,8 +6326,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-2682.18726, 198.169113, -2991.05737, 0.600202382, 6.21085405e-09, 0.799848199, -5.2549618e-09, 1, -3.82174248e-09, -0.799848199, -1.9093529e-09, 0.600202382)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 900 or MyLevel <= 949 then
             Mon = "Marine Captain [Lv. 900]"
@@ -6397,8 +6336,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1860.27209, 197.220596, -3219.6062, 0.816204965, 2.98379241e-08, -0.577762485, -9.47813916e-08, 1, -8.22537274e-08, 0.577762485, 1.21897031e-07, 0.816204965)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 950 or MyLevel <= 974 then
             Mon = "Zombie [Lv. 950]"
@@ -6409,8 +6346,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5634.83838, 126.067039, -697.665039)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 975 or MyLevel <= 999 then
             Mon = "Vampire [Lv. 975]"
@@ -6421,8 +6356,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-6030.32031, 6.4377408, -1313.5564)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1000 or MyLevel <= 1049 then
             Mon = "Snow Trooper [Lv. 1000]"
@@ -6433,8 +6366,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(535.893433, 401.457062, -5329.6958)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1050 or MyLevel <= 1099 then
             Mon = "Winter Warrior [Lv. 1050]"
@@ -6445,8 +6376,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(1223.7417, 454.575226, -5170.02148)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1100 or MyLevel <= 1124 then
             Mon = "Lab Subordinate [Lv. 1100]"
@@ -6457,8 +6386,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5769.2041, 37.9288292, -4468.38721)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1125 or MyLevel <= 1174 then
             Mon = "Horned Warrior [Lv. 1125]"
@@ -6469,8 +6396,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-6400.85889, 24.7645149, -5818.63574)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1175 or MyLevel <= 1199 then
             Mon = "Magma Ninja [Lv. 1175]"
@@ -6481,8 +6406,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5496.65576, 58.6890411, -5929.76855)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1200 or MyLevel <= 1249 then
             Mon = "Lava Pirate [Lv. 1200]"
@@ -6493,8 +6416,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-5169.71729, 34.1234779, -4669.73633)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1250 or MyLevel <= 1274 then
             Mon = "Ship Deckhand [Lv. 1250]"
@@ -6505,8 +6426,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(1181.84875, 130.485107, 33005.4961, -0.946877539, -7.47373434e-08, -0.321594298, -7.391602e-08, 1, -1.47637005e-08, 0.321594298, 9.79155601e-09, -0.946877539)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1275 or MyLevel <= 1299 then
             Mon = "Ship Engineer [Lv. 1275]"
@@ -6517,8 +6436,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(919.250427, 43.544014, 32781.9922, 0.999619186, 4.03968698e-08, -0.0275939237, -3.75240887e-08, 1, 1.04626984e-07, 0.0275939237, -1.03551706e-07, 0.999619186)       
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1300 or MyLevel <= 1324 then
             Mon = "Ship Steward [Lv. 1300]"
@@ -6529,8 +6446,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(917.478882, 129.556, 33441.2227, -0.999965012, -1.84493896e-08, -0.00836863648, -1.84426696e-08, 1, -8.80260864e-10, 0.00836863648, -7.2589007e-10, -0.999965012)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1325 or MyLevel <= 1349 then
             Mon = "Ship Officer [Lv. 1325]"
@@ -6541,8 +6456,6 @@ function QuestCheck()
             FrameMon = CFrame.new(1201.18286, 181.149124, 33308.0508, 0.0748318806, -7.14178512e-08, -0.997196138, 2.97970733e-08, 1, -6.93826223e-08, 0.997196138, -2.45214959e-08, 0.0748318806)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1350 or MyLevel <= 1374 then
             Mon = "Arctic Warrior [Lv. 1350]"
@@ -6553,8 +6466,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5667.6582, 26.7997818, -6486.08984, -0.933587909, 0, -0.358349502, 0, 1, 0, 0.358349502, 0, -0.933587909)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1375 or MyLevel <= 1424 then
             Mon = "Snow Lurker [Lv. 1375]"
@@ -6565,8 +6476,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5518.00684, 60.5559731, -6828.80518)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1425 or MyLevel <= 1449 then
             Mon = "Sea Soldier [Lv. 1425]"
@@ -6577,8 +6486,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-3366.32958984375, 47.21970748901367, -9704.3505859375)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel >= 1450 then
             Mon = "Water Fighter [Lv. 1450]"
@@ -6589,8 +6496,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-3436.7727050781, 290.52191162109, -10503.438476563)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		end
     elseif ThirdSea then
@@ -6603,8 +6508,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-290.674988, 34.7821121, 5417.57666, -0.959131062, 7.87279077e-08, 0.282962203, 6.99472977e-08, 1, -4.11336849e-08, -0.282962203, -1.96601544e-08, -0.959131062)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1525 or MyLevel <= 1574 then
             Mon = "Pistol Billionaire [Lv. 1525]"
@@ -6615,8 +6518,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-387.624237, 74.2720413, 5851.84473, -0.990750372, -6.79122536e-08, 0.135697171, -7.2516066e-08, 1, -2.89841076e-08, -0.135697171, -3.85562409e-08, -0.990750372)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1575 or MyLevel <= 1599 then
             Mon = "Dragon Crew Warrior [Lv. 1575]"
@@ -6627,8 +6528,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(6241.9951171875, 51.522083282471, -1243.9771728516)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1600 or MyLevel <= 1624 then 
             Mon = "Dragon Crew Archer [Lv. 1600]"
@@ -6639,8 +6538,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(6788.97461, 462.341248, 164.233673, -0.711975694, 1.98202414e-08, 0.702204108, -1.45830699e-08, 1, -4.30117559e-08, -0.702204108, -4.08636183e-08, -0.711975694)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1625 or MyLevel <= 1649 then
             Mon = "Female Islander [Lv. 1625]"
@@ -6651,8 +6548,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(5763.98682, 848.118103, 1082.43127, 0.986172736, 2.65753979e-08, 0.165720671, -2.36233451e-08, 1, -1.97844852e-08, -0.165720671, 1.55960436e-08, 0.986172736)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1650 or MyLevel <= 1699 then 
             Mon = "Giant Islander [Lv. 1650]"
@@ -6663,8 +6558,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(4784.24561, 708.376465, 466.297485, 0.99801594, 3.11927195e-09, 0.0629619658, -5.34848299e-09, 1, 3.52371394e-08, -0.0629619658, -3.55039766e-08, 0.99801594)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1700 or MyLevel <= 1724 then
             Mon = "Marine Commodore [Lv. 1700]"
@@ -6675,8 +6568,6 @@ function QuestCheck()
             PosMon = Vector3.new(2490.0844726563, 190.4232635498, -7160.0502929688)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1725 or MyLevel <= 1774 then
             Mon = "Marine Rear Admiral [Lv. 1725]"
@@ -6687,8 +6578,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(3951.3903808594, 229.11549377441, -6912.81640625)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1775 or MyLevel <= 1799 then
             Mon = "Fishman Raider [Lv. 1775]"
@@ -6699,8 +6588,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-10322.400390625, 390.94473266602, -8580.0908203125)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1800 or MyLevel <= 1824 then
             Mon = "Fishman Captain [Lv. 1800]"
@@ -6711,8 +6598,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-11194.541992188, 442.02795410156, -8608.806640625)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1825 or MyLevel <= 1849 then
             Mon = "Forest Pirate [Lv. 1825]"
@@ -6723,8 +6608,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-13225.809570313, 428.19387817383, -7753.1245117188)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1850 or MyLevel <= 1899 then
             Mon = "Mythological Pirate [Lv. 1850]"
@@ -6735,8 +6618,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-13869.172851563, 564.95251464844, -7084.4135742188)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1900 or MyLevel <= 1924 then
             Mon = "Jungle Pirate [Lv. 1900]"
@@ -6747,8 +6628,6 @@ function QuestCheck()
             FrameMon = CFrame.new(-11982.221679688, 376.32522583008, -10451.415039063)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1925 or MyLevel <= 1974 then
             Mon = "Musketeer Pirate [Lv. 1925]"
@@ -6759,8 +6638,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-13282.3046875, 496.23684692383, -9565.150390625)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 1975 or MyLevel <= 1999 then
             Mon = "Reborn Skeleton [Lv. 1975]"
@@ -6771,8 +6648,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-8817.880859375, 191.16761779785, 6298.6557617188)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2000 or MyLevel <= 2024 then
             Mon = "Living Zombie [Lv. 2000]"
@@ -6783,8 +6658,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-10125.234375, 183.94705200195, 6242.013671875)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2025 or MyLevel <= 2049 then
             Mon = "Demonic Soul [Lv. 2025]"
@@ -6795,8 +6668,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-9712.03125, 204.69589233398, 6193.322265625)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2050 or MyLevel <= 2074 then
             Mon = "Posessed Mummy [Lv. 2050]"
@@ -6807,8 +6678,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-9545.7763671875, 69.619895935059, 6339.5615234375)    
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2075 or MyLevel <= 2099 then
             Mon = "Peanut Scout [Lv. 2075]"
@@ -6819,8 +6688,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-2265.89014, 89.7506104, -10261.2197, -0.809553444, -9.26727282e-08, 0.587046146, -5.44419549e-08, 1, 8.27857534e-08, -0.587046146, 3.50595535e-08, -0.809553444)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2100 or MyLevel <= 2124 then
             Mon = "Peanut President [Lv. 2100]"
@@ -6831,8 +6698,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-2062.11792, 86.0444489, -10481.1445, 0.834163189, -9.79785408e-09, -0.551517665, -2.60617616e-09, 1, -2.17070646e-08, 0.551517665, 1.95445864e-08, 0.834163189)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2125 or MyLevel <= 2149 then
             Mon = "Ice Cream Chef [Lv. 2125]"
@@ -6843,8 +6708,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-875.441345, 107.871437, -11253.3691, 0.630182087, 5.98710486e-08, 0.776447415, -6.03229751e-08, 1, -2.81494827e-08, -0.776447415, -2.90983202e-08, 0.63018208)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2150 or MyLevel <= 2199 then
             Mon = "Ice Cream Commander [Lv. 2150]"
@@ -6855,8 +6718,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-643.3078, 140.913528, -11334.7109, -0.996822715, -9.07818087e-09, 0.0796525627, -1.43212509e-08, 1, -6.52529906e-08, -0.0796525627, -6.61863808e-08, -0.996822715)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2200 or MyLevel <= 2224 then
             Mon = "Cookie Crafter [Lv. 2200]"
@@ -6867,8 +6728,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-2437.66064, 133.07428, -12122.8721, 0.215197399, 2.05706883e-08, -0.976570547, -6.6551344e-08, 1, 6.39893472e-09, 0.976570547, 6.36150475e-08, 0.215197399)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2225 or MyLevel <= 2249 then
             Mon = "Cake Guard [Lv. 2225]"
@@ -6879,8 +6738,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1595.00916, 44.7149811, -12252.0547, -0.998557925, -6.0718726e-08, -0.0536852553, -5.64001539e-08, 1, -8.19574169e-08, 0.0536852553, -7.88113681e-08, -0.998557925)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2250 or MyLevel <= 2274 then
             Mon = "Baking Staff [Lv. 2250]"
@@ -6891,8 +6748,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-1817.20581, 93.8077316, -12885.6309, -0.696141601, 7.12665269e-08, 0.717904449, 4.05417566e-08, 1, -5.99574506e-08, -0.717904449, -1.26337669e-08, -0.696141601)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2274 or MyLevel <= 2300 then
             Mon = "Head Baker [Lv. 2275]"
@@ -6903,8 +6758,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-2263.37744, 156.999985, -12776, 0.945995748, 2.16281637e-09, 0.324179053, -1.23387056e-09, 1, -3.0710805e-09, -0.324179053, 2.50523402e-09, 0.945995748)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2301 or MyLevel <= 2324 then
             Mon = "Cocoa Warrior [Lv. 2300]"
@@ -6915,8 +6768,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(-103.987442, 141.551514, -12260.2188, 0.589523733, -3.54913752e-08, -0.80775106, 4.28455316e-08, 1, -1.26684059e-08, 0.80775106, -2.71401959e-08, 0.589523733)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2325 or MyLevel <= 2349 then
             Mon = "Chocolate Bar Battler [Lv. 2325]"
@@ -6927,8 +6778,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(617.304688, 80.6076355, -12580.6494, -0.485228658, 3.42073503e-09, -0.874387324, -4.0368306e-08, 1, 2.63139608e-08, 0.874387324, 4.80658215e-08, -0.485228658)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2350 or MyLevel <= 2374 then
             Mon = "Sweet Thief [Lv. 2350]"
@@ -6939,8 +6788,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(72.062767, 77.630722, -12640.4287, -0.62450999, -9.80953416e-08, 0.781016827, 1.42118917e-09, 1, 1.26735927e-07, -0.781016827, 8.02578199e-08, -0.62450999)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		elseif MyLevel == 2375 or MyLevel <= 2400 then
             Mon = "Candy Rebel [Lv. 2375]"
@@ -6951,8 +6798,6 @@ function QuestCheck()
             CFrameMon = CFrame.new(420.127747, 109.63044, -12989.6035, 0.0957952142, 3.10210027e-08, 0.995401084, -9.46955225e-09, 1, -3.02529948e-08, -0.995401084, -6.52791066e-09, 0.0957952142)
 			if getgenv().LevelFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 1200 then
                 ByPass(CFrameQuest)
-                local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
-                LibraryNotify:Notification({ Text = "Alchemy Hub : Farming...", Duration = 1 })
             end
 		end
     end
@@ -7500,16 +7345,4 @@ task.spawn(function()
     end)
 end)
 
-return library, library_flags, library.subs
---[[
-
-█████╗  ██╗      ██████╗██╗  ██╗███████╗███╗   ███╗██╗   ██╗    ██╗  ██╗██╗   ██╗██████╗ 
-██╔══██╗██║     ██╔════╝██║  ██║██╔════╝████╗ ████║╚██╗ ██╔╝    ██║  ██║██║   ██║██╔══██╗
-███████║██║     ██║     ███████║█████╗  ██╔████╔██║ ╚████╔╝     ███████║██║   ██║██████╔╝
-██╔══██║██║     ██║     ██╔══██║██╔══╝  ██║╚██╔╝██║  ╚██╔╝      ██╔══██║██║   ██║██╔══██╗
-██║  ██║███████╗╚██████╗██║  ██║███████╗██║ ╚═╝ ██║   ██║       ██║  ██║╚██████╔╝██████╔╝
-╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
-Create By Alchemy Hub --------------------------- Kaitan Script Open-Source [ 29/6/2023 ]
-< Alchemy#9999 / Copyright © Alchemy 2023 >
-
-]]--
+return library, library_flags, library.subs----อย่าเอาออกไอสัส
